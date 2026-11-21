@@ -1,0 +1,25 @@
+.footer {
+  padding-inline: var(--gutter);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-ink-faint);
+  font-size: var(--text-sm);
+}
+
+/* The same logo, at the same size, as the header */
+.mark {
+  width: auto;
+  height: var(--space-8);
+}
+
+.note {
+  margin-inline-start: auto;
+}

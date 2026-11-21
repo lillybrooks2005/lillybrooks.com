@@ -1,0 +1,133 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: end;
+  /* The page fills the screen between header and footer; its content sits in the middle of that space */
+  align-content: center;
+  gap: var(--space-16);
+  max-width: var(--page-max-padded);
+  margin-inline: auto;
+  /* Vertical spacing follows the screen's height, so the page still fits one screen on a short window */
+  padding: clamp(var(--space-4), 4svh, var(--space-16)) var(--gutter);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-4);
+  color: var(--color-ink-soft);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.02em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.body {
+  max-width: 30rem;
+  margin-top: clamp(var(--space-4), 4svh, var(--space-8));
+  color: var(--color-ink-soft);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.email {
+  display: inline-block;
+  margin-top: clamp(var(--space-4), 4svh, var(--space-8));
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  text-decoration: underline;
+  text-decoration-color: var(--color-pink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+  transition: text-decoration-color var(--duration-fast) var(--ease);
+}
+
+.email:hover {
+  text-decoration-color: var(--color-pink-deep);
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+.dot {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: 50%;
+  background: var(--color-green-deep);
+}
+
+.card {
+  position: relative;
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.details {
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--text-sm);
+}
+
+/* The last row has no divider beneath it */
+.item:last-child {
+  border-bottom: none;
+}
+
+.item dt {
+  color: var(--color-ink-faint);
+}
+
+.item dd {
+  margin: 0;
+  text-align: right;
+}
+
+.bloom {
+  position: absolute;
+  top: -5.5rem;
+  right: var(--space-6);
+  width: 3.5rem;
+  height: auto;
+  transform: rotate(8deg);
+}
+
+/*
+  Wide screens tall enough to lock the page to one screen (the same sizes as
+  the lock itself, in globals.css): the heading is capped by the screen's
+  height as well, so everything fits without scrolling.
+*/
+@media (min-width: 52rem) and (min-height: 40rem) {
+  .heading {
+    font-size: min(var(--text-display), 9svh);
+  }
+}
+
+@media (max-width: 52rem) {
+  .page {
+    grid-template-columns: 1fr;
+    align-items: start;
+    /* Room for the flower that stands on top of the card */
+    gap: var(--space-24);
+  }
+}

@@ -1,0 +1,72 @@
+/*
+  Lilly Brooks — tokens.
+  Pink and green are accents only: a fill inside a doodle, an underline, a dot.
+  Never a background, never body text. If you reach for them on a large area,
+  the site stops feeling grown-up.
+*/
+:root {
+  /* Color — warm paper and soft ink, the Notion-ish base */
+  --color-paper: #fbf9f6;
+  --color-surface: #f4f0ea;
+  /* A warm dark brown-gray, not black: text, primary buttons and the doodle linework all use it */
+  --color-ink: #33291f;
+  --color-ink-soft: #5f5953;
+  --color-ink-faint: #8f8780;
+  --color-line: #e6e0d8;
+
+  /* Accents */
+  --color-pink: #e3a9b4;
+  --color-pink-deep: #b8606f;
+  --color-green: #a9bf9a;
+  --color-green-deep: #4f6b4d;
+
+  /* Type */
+  --font-display: var(--font-instrument), "Times New Roman", serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
+
+  --text-sm: 0.875rem;
+  /* The small label above each page heading: a step up from --text-sm, still under body size */
+  --text-eyebrow: 1rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  --text-display: clamp(3rem, 1.6rem + 5.6vw, 6.25rem);
+
+  --leading-tight: 1.02;
+  --leading-body: 1.6;
+
+  /* Space — 4px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --gutter: clamp(1rem, 0.5rem + 3vw, 3rem);
+  --measure: 38rem;
+  --page-max: 72rem;
+  /* For a page that carries its own gutters, so its content still lines up with the header and footer */
+  --page-max-padded: calc(var(--page-max) + 2 * var(--gutter));
+
+  /* Cursor — a small green dot, with a soft halo over anything clickable */
+  --cursor-dot: url("/cursor-dot.svg") 8 8, auto;
+  --cursor-dot-active: url("/cursor-dot-active.svg") 12 12, pointer;
+
+  /* Shape */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.875rem;
+  /* Buttons are very rounded squares, not full pills */
+  --radius-button: var(--radius-md);
+  --radius-arch: 999px 999px var(--radius-md) var(--radius-md);
+
+  /* Motion — slow and soft; nothing bounces */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-slow: 700ms;
+  /* One pen stroke of a doodle drawing itself */
+  --duration-draw: 900ms;
+}

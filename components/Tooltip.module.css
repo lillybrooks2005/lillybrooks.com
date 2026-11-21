@@ -1,0 +1,71 @@
+.wrap {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  border-radius: var(--radius-sm);
+}
+
+.term {
+  text-decoration: underline;
+  text-decoration-color: var(--color-pink-deep);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.3em;
+}
+
+.bubble {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.5rem);
+  z-index: 10;
+  width: max-content;
+  max-width: 19rem;
+  padding: var(--space-3) var(--space-4);
+  /* A soft green wash over the paper, with a green edge */
+  border: 1px solid var(--color-green);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-green) 28%, var(--color-paper));
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: start;
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  pointer-events: none;
+  transition:
+    opacity var(--duration-fast) var(--ease),
+    transform var(--duration-fast) var(--ease);
+}
+
+/* An invisible bridge so the pointer can cross the gap to the note without it closing */
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 0.9rem;
+}
+
+.wrap:hover .bubble,
+.wrap:focus-visible .bubble,
+.wrap:focus-within .bubble {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.flower {
+  position: absolute;
+  top: -0.9rem;
+  right: -0.7rem;
+  width: 1.7rem;
+  height: auto;
+}
+
+.text a {
+  color: var(--color-green-deep);
+  text-decoration: underline;
+  text-decoration-color: var(--color-green-deep);
+  text-underline-offset: 0.2em;
+}

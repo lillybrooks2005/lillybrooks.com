@@ -1,0 +1,9 @@
+<!--
+  The browser-tab icon: the LB monogram on a pink dot set slightly off-centre, like the colour washes behind the doodles.
+  Colours are --color-pink and --color-ink from app/tokens.css; an SVG file can't read CSS tokens, so keep them in sync by hand.
+  The line is much heavier than in the header logo so it survives at 16px. app/apple-icon.png is the same drawing for phone home screens.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="34.5" cy="33.5" r="28" fill="#e3a9b4"/>
+  <path transform="translate(4.2 10) scale(0.78)" fill="none" stroke="#33291f" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round" d="M27.69 14.01 C 33.5 10.5, 39.5 9, 39.5 4 C 39.5 0.2, 28 0.2, 28 6 C 28 12, 27.3 21, 26 27 C 24 36, 21 46, 14 46 C 7 46, 6 38, 13 37 C 23 35, 30 50, 42 46 C 52 42, 55 22, 53 11 C 51 3, 44 4, 44 13 C 44 24, 44 36, 46 44 C 47 35, 58 32, 61 39 C 64 47, 54 52, 47 45"/>
+</svg>

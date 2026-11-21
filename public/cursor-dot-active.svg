@@ -1,0 +1,2 @@
+<!-- Colours are --color-green (halo) and --color-green-deep (dot) from app/tokens.css; keep in sync by hand -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="#a9bf9a" fill-opacity="0.55"/><circle cx="12" cy="12" r="4.5" fill="#4f6b4d"/></svg>

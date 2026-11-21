@@ -1,0 +1,2 @@
+<!-- Colour is --color-green-deep from app/tokens.css; an SVG file can't read CSS tokens, so keep the two in sync by hand -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4.5" fill="#4f6b4d"/></svg>

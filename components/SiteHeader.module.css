@@ -1,0 +1,80 @@
+.header {
+  padding-inline: var(--gutter);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  text-decoration: none;
+  letter-spacing: 0.005em;
+}
+
+.nameText {
+  white-space: nowrap;
+}
+
+/* On a phone there isn't room for the logo, the name and the links: the logo stands in for the name, which stays readable to screen readers */
+@media (max-width: 30rem) {
+  .nameText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+}
+
+.mark {
+  width: auto;
+  height: var(--space-8);
+}
+
+.links {
+  display: flex;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  /* Soft pill that appears on hover — the same quiet affordance Notion's sidebar uses */
+  --link-bg: transparent;
+  /* Anchors the drawn line under the current page's name */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--link-bg);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition:
+    background var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease);
+}
+
+.link:hover {
+  --link-bg: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.link[aria-current="page"] {
+  color: var(--color-ink);
+}

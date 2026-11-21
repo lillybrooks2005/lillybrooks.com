@@ -1,0 +1,179 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: var(--space-16);
+  max-width: var(--page-max-padded);
+  margin-inline: auto;
+  /* Vertical spacing here follows the screen's height, so the page still fits one screen on a short window */
+  padding: clamp(var(--space-6), 5svh, var(--space-16)) var(--gutter);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-6);
+  color: var(--color-ink-soft);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.02em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.accent {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+}
+
+/* The flower that ends the heading, sitting on the baseline where a full stop would */
+.period {
+  display: inline-block;
+  /* A little larger than a real full stop, or the petals close up into a dot */
+  width: 0.34em;
+  height: auto;
+  margin-inline-start: 0.05em;
+}
+
+.intro {
+  max-width: 32rem;
+  /* Extra room so the squiggle under the heading doesn't crowd the first line */
+  margin-top: clamp(var(--space-8), 5svh, var(--space-12));
+  color: var(--color-ink-soft);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: clamp(var(--space-6), 5svh, var(--space-12));
+}
+
+.primary {
+  --btn-bg: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-6);
+  border-radius: var(--radius-button);
+  background: var(--btn-bg);
+  color: var(--color-paper);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--duration-fast) var(--ease);
+}
+
+.primary:hover {
+  --btn-bg: var(--color-green-deep);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.4em;
+  transition: text-decoration-color var(--duration-fast) var(--ease);
+}
+
+.secondary:hover {
+  --icon-draw: var(--redraw);
+  text-decoration-color: var(--color-pink-deep);
+}
+
+.portrait {
+  position: relative;
+  width: min(100%, 22rem);
+  /* The photo's own shape (1500 x 2250) */
+  aspect-ratio: 2 / 3;
+  /* Pushed right so the photo's edge meets the edge of the header and footer */
+  margin: 0 0 0 auto;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-arch);
+}
+
+/* Laid exactly over the photo; the vine is drawn just outside its edge */
+.garland {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/*
+  Wide screens tall enough to lock the page to one screen (the same sizes as
+  the lock itself, in globals.css). Here the heading and photo are sized by
+  the screen's height too, so everything fits without scrolling.
+*/
+@media (min-width: 52rem) and (min-height: 40rem) {
+  .heading {
+    font-size: min(var(--text-display), 11svh);
+  }
+
+  .portrait {
+    width: auto;
+    max-width: 100%;
+    /* 20rem is roughly the header, footer and padding around the photo */
+    height: min(33rem, 100svh - 20rem);
+  }
+}
+
+@media (max-width: 52rem) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: var(--space-8);
+  }
+
+  .portrait {
+    height: auto;
+    width: min(70%, 17rem);
+    margin-inline: auto;
+  }
+}
+
+/* Phones */
+@media (max-width: 30rem) {
+  /* Sized off the screen's width so "connection" plus its flower fills the line; the heading runs to two lines */
+  .heading {
+    font-size: 18vw;
+  }
+
+  .intro {
+    font-size: var(--text-sm);
+  }
+
+  .ctas {
+    justify-content: center;
+  }
+}
+
+/* Tall phones and tablets, where the page is locked to one screen: the photo takes whatever height is left under the text */
+@media (max-width: 52rem) and (min-height: 58rem) {
+  .portrait {
+    width: auto;
+    /* 46rem is roughly the header, the text above, and the footer */
+    height: min(25.5rem, 100svh - 46rem);
+  }
+}

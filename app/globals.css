@@ -1,0 +1,132 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Lets <details> animate to its natural height in the CV */
+  interpolate-size: allow-keywords;
+  cursor: var(--cursor-dot);
+}
+
+a,
+button,
+summary {
+  cursor: var(--cursor-dot-active);
+}
+
+/*
+  The page is a column at least one screen tall, so the footer sits at the
+  bottom even on a short page.
+*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  flex: 1;
+  /* Without this, a centred page (auto side margins) would shrink to fit its content */
+  width: 100%;
+}
+
+/*
+  A page that marks its <main> with data-fit-screen (the home page) is locked
+  to exactly one screen: no scrolling. Only when the screen is big enough to
+  hold everything — on a short window or a phone the page scrolls instead, so
+  nothing is ever cut off. The same sizes are used in app/page.module.css.
+*/
+@media (min-width: 52rem) and (min-height: 40rem), (max-width: 52rem) and (min-height: 58rem) {
+  body:has([data-fit-screen]) {
+    height: 100svh;
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-pink);
+  color: var(--color-ink);
+}
+
+/* One focus ring for the whole site — a second variant would be a bug, not a style */
+:focus-visible {
+  outline: 2px solid var(--color-green-deep);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Shared entrance: content settles in rather than popping */
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-3));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A line drawing itself again, for doodled icons on hover. Needs `pathLength={1}` and a dash of 1 on the path. */
+@keyframes redraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Anything given a turn with reveal() (components/Reveal.tsx); its delay is set inline */
+[data-reveal] {
+  animation: var(--settle);
+}
+
+/* A single word needs to be a box of its own before it can slide */
+[data-reveal="word"] {
+  display: inline-block;
+}
+
+/* Modules write `animation: var(--settle)` so reduced motion is handled once, here */
+:root {
+  --settle: settle var(--duration-slow) var(--ease) both;
+  --redraw: redraw 450ms var(--ease) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --settle: none;
+    --redraw: none;
+    --duration-fast: 0ms;
+  }
+}

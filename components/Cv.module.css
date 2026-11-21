@@ -1,0 +1,146 @@
+.cv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.label {
+  margin-bottom: var(--space-3);
+  padding-inline: var(--space-6);
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.list {
+  margin: 0;
+  padding: var(--space-2) var(--space-6);
+  list-style: none;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+.row {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.summary {
+  display: block;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr auto 1.5rem;
+  grid-template-areas:
+    "title dates toggle"
+    "detail detail detail";
+  column-gap: var(--space-4);
+  row-gap: var(--space-1);
+  padding-block: var(--space-4);
+  line-height: 1.4;
+}
+
+.title {
+  grid-area: title;
+  font-weight: 500;
+}
+
+.dates {
+  grid-area: dates;
+  color: var(--color-ink-faint);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.detail {
+  grid-area: detail;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+  text-wrap: wrap;
+}
+
+.toggle {
+  grid-area: toggle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.4em;
+  color: var(--toggle-color, var(--color-ink-faint));
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.plus {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+/* Only the upright line turns; it lies down on the flat one, leaving a minus */
+.upright {
+  transform: rotate(var(--plus-turn, 0deg));
+  transform-origin: center;
+  transition: transform 320ms var(--ease);
+}
+
+/*
+  State is passed down as custom properties instead of descendant selectors,
+  so hover and open never fight over the same property.
+*/
+.summary:hover {
+  --toggle-color: var(--color-ink);
+}
+
+/* Open: the plus folds into a minus, and the pink is the only accent in the row */
+.details[open] {
+  --toggle-color: var(--color-pink-deep);
+  --plus-turn: 90deg;
+}
+
+/* Smooth open/close where supported; elsewhere it simply snaps, which is fine */
+.details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 320ms var(--ease),
+    content-visibility 320ms allow-discrete;
+}
+
+.details[open]::details-content {
+  block-size: auto;
+}
+
+.note {
+  max-width: none;
+  padding-bottom: var(--space-4);
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+  text-wrap: wrap;
+}
+
+.note strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+@media (max-width: 34rem) {
+  .head {
+    grid-template-columns: 1fr 1.5rem;
+    grid-template-areas:
+      "title toggle"
+      "detail detail"
+      "dates dates";
+  }
+}
