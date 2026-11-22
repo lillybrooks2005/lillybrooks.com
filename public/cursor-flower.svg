@@ -1,0 +1,2 @@
+<!-- Petals are --color-pink and centre is --color-green-deep from app/tokens.css; keep in sync by hand -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12.00" cy="6.80" r="3.6" fill="#e3a9b4"/><circle cx="16.95" cy="10.39" r="3.6" fill="#e3a9b4"/><circle cx="15.06" cy="16.21" r="3.6" fill="#e3a9b4"/><circle cx="8.94" cy="16.21" r="3.6" fill="#e3a9b4"/><circle cx="7.05" cy="10.39" r="3.6" fill="#e3a9b4"/><circle cx="12.0" cy="12.0" r="2.6" fill="#4f6b4d"/></svg>

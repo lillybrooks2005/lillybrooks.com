@@ -53,8 +53,8 @@
   --page-max-padded: calc(var(--page-max) + 2 * var(--gutter));
 
   /* Cursor — a small green dot, with a soft halo over anything clickable */
-  --cursor-dot: url("/cursor-dot.svg") 8 8, auto;
-  --cursor-dot-active: url("/cursor-dot-active.svg") 12 12, pointer;
+  --cursor-dot: url("/cursor-flower.svg") 12 12, auto;
+  --cursor-dot-active: url("/cursor-flower-active.svg") 15 15, pointer;
 
   /* Shape */
   --radius-sm: 0.375rem;

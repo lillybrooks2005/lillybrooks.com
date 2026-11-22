@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { about, cv } from "@/content/site";
 import { Cv } from "@/components/Cv";
+import { Gallery } from "@/components/Gallery";
 import { DocumentDoodle, Sprig } from "@/components/Doodles";
 import { Annotated } from "@/components/Tooltip";
 import { Words, reveal, wordCount } from "@/components/Reveal";
@@ -33,7 +34,8 @@ export default function AboutPage() {
           <a
             className={styles.resume}
             href={about.resume.href}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             {...reveal(bioTurn + about.bio.length)}
           >
             <DocumentDoodle />
@@ -42,10 +44,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className={styles.gallery}>
+        <Gallery photos={about.gallery} order={bioTurn + about.bio.length + 1} />
+      </section>
+
       <section
         className={styles.cv}
         aria-label={about.cvLabel}
-        {...reveal(bioTurn + about.bio.length + 1)}
+        {...reveal(bioTurn + about.bio.length + 1 + about.gallery.length)}
       >
         <Cv groups={cv} />
       </section>

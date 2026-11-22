@@ -56,8 +56,25 @@ export const about = {
       text: "American Choral Directors Association, the national community of choral conductors and teachers.",
     },
   },
-  // TODO: the PDF itself isn't in the project yet — save it as public/lilly-brooks-resume.pdf
-  resume: { href: "/lilly-brooks-resume.pdf", label: "Download resume" },
+  // The Google Doc is the source of truth for the resume; the button opens it in a new tab
+  resume: {
+    href: "https://docs.google.com/document/d/1nAgHE2VFXFdYheZByM2A20QHO2x-rSiIu4ZiZp-8eRQ/edit?usp=sharing",
+    label: "Download resume",
+  },
+  // Photos shown above the CV. Width and height are each file's real pixel size.
+  gallery: [
+    { src: "/gallery/photo-01.jpg", width: 1600, height: 1200, alt: "Lilly smiling in a classroom, holding a bin of toys" },
+    { src: "/gallery/photo-02.jpg", width: 1600, height: 1070, alt: "Lilly singing on stage in a blue floral dress, with a pianist and a violinist" },
+    { src: "/gallery/photo-03.jpg", width: 1600, height: 1200, alt: "Lilly and a friend smiling with large brass instruments" },
+    { src: "/gallery/photo-04.jpg", width: 1125, height: 1500, alt: "Two graduates wearing Ohio University School of Music stoles" },
+    { src: "/gallery/photo-05.jpg", width: 1600, height: 1200, alt: "Lilly with students in maroon and black Marching 110 uniforms" },
+    { src: "/gallery/photo-06.jpg", width: 1145, height: 1500, alt: "A group of smiling summer camp students in tutus and face paint" },
+    { src: "/gallery/photo-07.jpg", width: 1500, height: 1125, alt: "Marching 110 volunteers at a check-in table" },
+    { src: "/gallery/photo-08.jpg", width: 1169, height: 1428, alt: "The Marching 110 in white and black uniforms on a football field" },
+    { src: "/gallery/photo-09.jpg", width: 1170, height: 1510, alt: "Lilly with two family members at an event" },
+    { src: "/gallery/photo-10.jpg", width: 1170, height: 1547, alt: "Lilly playing her mellophone in the Marching 110" },
+    { src: "/gallery/photo-11.jpg", width: 1170, height: 1494, alt: "A group of students and friends posing together in a classroom" },
+  ],
   // Not shown on the page; read aloud by screen readers to name the CV section
   cvLabel: "CV",
 };
@@ -103,7 +120,7 @@ export const cv: CvGroup[] = [
         title: "ACMS Summer Music Program Lead Teacher",
         detail: "Athens Community Music School, Ohio University School of Music · Athens, OH",
         dates: "July 2026",
-        note: "Led students ages 6 to 18 in singing, dancing, and musical activities. Fostered a positive, energetic, and patient learning environment.",
+        note: "Led students ages 6 to 12 in singing, dancing, and musical activities. Fostered a positive, energetic, and patient learning environment.",
         highlight: "singing, dancing, and musical activities",
       },
       {
@@ -202,12 +219,12 @@ export const cv: CvGroup[] = [
     roles: [
       {
         title: "Teaching",
-        detail: "Lesson planning, state standards, classroom management, early childhood music, sectionals, drill instruction",
+        detail: "Lesson planning, state standards, classroom management, leading sectionals, drill instruction, rehearsing ensembles",
         dates: "",
       },
       {
         title: "Music",
-        detail: "Choral conducting, voice, mellophone, intermediate pianist",
+        detail: "Choral conducting, voice, intermediate pianist",
         dates: "",
       },
       {
