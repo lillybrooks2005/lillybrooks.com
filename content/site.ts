@@ -30,7 +30,7 @@ export const home = {
   heading: "Music is connection",
   accent: "connection",
   intro:
-    "I'm a music educator with a focus in voice and conducting at Ohio University. I believe in the power of music to connect us to the world, ourselves, and each other.",
+    "I'm a music educator with a focus in voice and conducting. I believe in the power of music to connect us to the world, ourselves, and each other.",
   primaryCta: { href: "/about", label: "About me" },
   secondaryCta: { href: "/contact", label: "Get in touch" },
 };
