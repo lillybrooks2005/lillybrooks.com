@@ -45,7 +45,7 @@
   padding-top: var(--space-8);
   font-size: var(--text-lg);
   line-height: 1.65;
-  text-wrap: wrap;
+  text-wrap: pretty;
 }
 
 /* Same dark button as "About me" on the home page */

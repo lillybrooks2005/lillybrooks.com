@@ -67,7 +67,7 @@
   grid-area: detail;
   color: var(--color-ink-soft);
   font-size: var(--text-sm);
-  text-wrap: wrap;
+  text-wrap: pretty;
 }
 
 .toggle {
@@ -127,7 +127,7 @@
   color: var(--color-ink-soft);
   font-size: var(--text-sm);
   line-height: var(--leading-body);
-  text-wrap: wrap;
+  text-wrap: pretty;
 }
 
 .note strong {
