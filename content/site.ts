@@ -41,7 +41,7 @@ export const about = {
   // Each string is its own paragraph
   // Each string is its own paragraph. {marching} and {acda} open a note (see notes below).
   bio: [
-    "I'm a music educator from small town Ohio. A town that takes its community and traditions seriously, and I build my classrooms the same way. I believe that music brings people together.",
+    "Growing up in a small town taught me the value of community, tradition, and connection. I carry those same values into my classroom as a music educator, striving to create an environment where music brings people together.",
     "I'm finishing my BM in music education at Ohio University and plan to graduate in spring of 2027 with a choral emphasis and minor in conducting. Outside of the classroom, I am a student leader in the {marching} and {acda} student chapter.",
   ],
   notes: {
