@@ -42,7 +42,7 @@ export const about = {
   // Each string is its own paragraph. {marching} and {acda} open a note (see notes below).
   bio: [
     "I'm a music educator from small town Ohio. A town that takes its community and traditions seriously, and I build my classrooms the same way. I believe that music brings people together.",
-    "I'm finishing my BA in music education at Ohio University and plan to graduate in spring of 2027 with a choral emphasis and minor in conducting. Outside of the classroom, I am a student leader in the {marching} and {acda} student chapter.",
+    "I'm finishing my BM in music education at Ohio University and plan to graduate in spring of 2027 with a choral emphasis and minor in conducting. Outside of the classroom, I am a student leader in the {marching} and {acda} student chapter.",
   ],
   notes: {
     marching: {
@@ -101,7 +101,7 @@ export const cv: CvGroup[] = [
     roles: [
       {
         title: "Ohio University",
-        detail: "Bachelor of Arts in Music Education, choral emphasis, minor in conducting · Athens, OH",
+        detail: "Bachelor of Music in Music Education, choral emphasis, minor in conducting · Athens, OH",
         dates: "Expected May 2027",
         note: "Training to lead choirs and teach music in schools, with a minor in conducting: gesture, score study, and running a rehearsal from the podium.", // TODO: confirm with Lilly
         highlight: "lead choirs and teach music in schools",
